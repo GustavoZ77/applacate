@@ -20,6 +20,10 @@
       "styles": [
         "styles.css"
       ],
+      "styles": [
+        "styles.css",
+        "custom_theme.scss"
+      ],
       "scripts": [],
       "environments": {
         "source": "environments/environment.ts",

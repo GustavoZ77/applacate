@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Auth } from './services/security/auth.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

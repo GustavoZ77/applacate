@@ -1,8 +1,77 @@
-<h1>
-  {{title}}
-</h1>
-<div class="navbar-header">
-  <a class="navbar-brand" href="#">Auth0 - Angular 2</a>
-  <button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
-  <button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
-</div>
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    <md-card class="example-card" style="width:190px;" >
+      <md-card-header>
+        <div md-card-avatar style="background-image: url('http://animalia-life.club/data_images/shiba-inu/shiba-inu1.jpg');
+  background-size: cover;"></div>
+        <md-card-title>Gustavo Zepeda</md-card-title>
+        <md-card-subtitle>Software developer</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+        <button md-button (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
+        <button md-button>Configuracion</button>     
+      </md-card-actions>
+    </md-card>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+  Applacate
+
+    <span class="app-toolbar-filler"></span>
+    <md-chip-list>
+      <md-chip color="accent" selected="true">Fiesta nueva!</md-chip>
+      <md-chip md-button (click)="isDarkTheme = !isDarkTheme" >Tema</md-chip>
+    </md-chip-list>
+  </md-toolbar>
+
+  <div class="app-content">
+    <md-card>
+      <md-tab-group>
+        <md-tab label="Mis fiestas">
+          <md-card>
+            <md-list>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">Cumpleaños de Anita</a>
+              </md-list-item>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">Despedida de Ernesto</a>
+              </md-list-item>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">Bautizo Panda</a>
+              </md-list-item>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">Carne Azada David</a>
+              </md-list-item>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">XV Años Mario</a>
+              </md-list-item>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">Mi Boda</a>
+              </md-list-item>
+            </md-list>
+        </md-card>
+        </md-tab>
+        <md-tab label="Invicationes">
+          <md-card>
+            <md-list>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">Alitas wings</a>
+              </md-list-item>
+              <md-list-item>
+                <a style="color:#00bcd4" md-button routerLink="#">Gasolinazo minerva</a>
+              </md-list-item>
+            </md-list>
+        </md-card>
+        </md-tab>
+      </md-tab-group>
+    </md-card>
+  </div>
+</md-sidenav-layout>
